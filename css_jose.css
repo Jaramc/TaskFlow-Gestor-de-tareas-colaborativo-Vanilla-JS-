@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+
+
+.container-checkbox{
+    grid-column: 2;
+    grid-row: 1;
+    border: salmon 1px solid;
+    width: 200px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 30px 1fr 1fr;
+    transition: 0.5s ease-out;
+    position: relative;
+    margin-top: 20px;
+
+}
+
+.container-checkbox:hover{
+    transform: translateX(0px) translateY(4px);
+    background-color: rgba(0, 255, 255, 0.13);
+}
+
+.t-container{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.priority{
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 255, 0.219);
+}
+
+.priority-body{
+    background-color: rgba(255, 255, 0, 0.253);
+    width: 160px;
+    height: 80px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s ease-out;
+}
+
+.priority-body:hover{
+    box-shadow: 6px 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+fieldset{
+    border: 0px;
+    display: list-item;
+}
+
+legend{
+    position: relative;
+    text-align: center;
+}
+
+label{
+    position: relative;
+    left: 20px;
+    padding: 10px;
+}
