@@ -36,13 +36,15 @@
                 </header>
                 <!--filters-->
                 <div class="btn-group mb-3" role="group">
-                    <button class="btn btn-outline-secondary filter-btn active">All</button>
-                    <button class="btn btn-outline-secondary filter-btn">Pending</button>
-                    <button class="btn btn-outline-secondary filter-btn">In Process</button>
-                    <button class="btn btn-outline-secondary filter-btn">Complete</button>
+                    <button class="btn btn-outline-secondary filter-btn active" data-filter="All">All</button>
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="Pending">Pending</button>
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="In Process">In Process</button>
+                    <button class="btn btn-outline-secondary filter-btn" data-filter="Complete">Complete</button>
                 </div>
                 <!--counter-->
                 <p class="text-muted mb-3" id="task-counter">Task Counter: 0</p>
+                <!--Task List-->
+                <div class="list-group" id="task-list"></div>
             </main>
         </div>
     </div>
@@ -56,6 +58,7 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" id="title" class="form-control mb-3" placeholder="Task Title" required>
+                    <input type="text" id="description" class="form-control mb-3" placeholder="Task Description" required>
                     <select class="form-select" id="priority">
                         <option>Low</option>
                         <option>Medium</option>
