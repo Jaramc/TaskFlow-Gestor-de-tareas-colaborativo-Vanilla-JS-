@@ -10,7 +10,7 @@
     <!-- Enlace al CSS -->
     <link rel="stylesheet" href="css_jose.css">
 </head>
-<body>
+<body style="background-color: white;"> 
     <main class="page-cont">
         <!-- =========================
             CONTENEDOR GENERAL
@@ -84,13 +84,13 @@
 
                 <header class="filter-header">
                     <h3>Conditions</h3>
-                    <button class="clear-filters">Clear filters</button>
+                    <button class="clear-filters" style="color: #8F4F82;">Clear filters</button>
                 </header>
 
                 <div class="filter-row">
                     <div class="toggle-group">
-                    <button data-owner="all" class="toggle active">All tasks</button>
-                    <button data-owner="mine" class="toggle">Only my tasks</button>
+                    <button data-owner="all" class="toggle active"  style="color: #8F4F82;" >All tasks</button>
+                    <button data-owner="mine" class="toggle"  style="color: #8F4F82;" >Only my tasks</button>
                     </div>
                 </div>
 
@@ -98,18 +98,18 @@
                     <div class="filter-block">
                     <h4>Priority</h4>
                     <div class="options">
-                        <button data-priority="high" class="chip">High</button>
-                        <button data-priority="medium" class="chip">Medium</button>
-                        <button data-priority="low" class="chip">Low</button>
+                        <button data-priority="high" class="chip" style="color: #8F4F82;">High</button>
+                        <button data-priority="medium" class="chip" style="color: #8F4F82;">Medium</button>
+                        <button data-priority="low" class="chip" style="color: #8F4F82;">Low</button>
                     </div>
                     </div>
 
                     <div class="filter-block">
                     <h4>Status</h4>
                     <div class="options">
-                        <button data-status="pending" class="chip">Pending</button>
-                        <button data-status="progress" class="chip">In Progress</button>
-                        <button data-status="completed" class="chip">Completed</button>
+                        <button data-status="pending" class="chip" style="color: #8F4F82;">Pending</button>
+                        <button data-status="progress" class="chip" style="color: #8F4F82;">In Progress</button>
+                        <button data-status="completed" class="chip" style="color: #8F4F82;">Completed</button>
                     </div>
                     </div>
                 </div>
@@ -124,17 +124,8 @@
                     <h2>All Tasks</h2>
                     <p class="subtitle">Selecciona condiciones para filtrar la lista</p>
 
-                    <!-- ⚠️ ESPACIO PARA TUS TAREAS -->
-                    <!-- =====================================================
-                        AQUÍ PUEDES PEGAR:
-                        - cards
-                        - listas
-                        - tablas
-                        - componentes dinámicos
-                    ====================================================== -->
                     <section class="task-list">
                         <ul class="tasks" id="tasks"></ul>
-
                     </section>
 
                 </section>

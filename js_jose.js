@@ -92,6 +92,7 @@ document.querySelector(".clear-filters").addEventListener("click", () => {
     .forEach(el => el.classList.remove("active"));
 
   document.querySelector('[data-owner="all"]').classList.add("active");
+  applyFilters();
 
   console.log("Reset:", filters);
 
@@ -119,7 +120,7 @@ function renderTasks(list) {
         ${formatStatus(task.status)}
       </span>
 
-      <span class="task-link">Tareas ›</span>
+      <span class="task-link">Tareas </span>
     `;
 
     taskContainer.appendChild(li);
