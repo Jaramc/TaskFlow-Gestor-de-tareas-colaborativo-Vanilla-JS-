@@ -13,3 +13,25 @@
 .list-group-item:hover{
     transform: translateY(-2px);
 }
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.status-pill.Pending{
+    background-color: #6c757d;
+}
+.status-pill.In-Process{
+    background-color: lightblue;
+    color: blue;
+}
+.status-pill.Complete{
+    background-color: green;
+    color: white;
+}
+#task-list {
+    max-width: 90%;
+    margin: 0 auto;
+}
