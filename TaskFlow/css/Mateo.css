@@ -1,0 +1,94 @@
+:root {
+    --primary: #D47F9F;
+    --secondary: #8F4F82;
+    --bg: #F7EAF1;
+    --card: #FFFFFF;
+    --text: #3A1B2E;
+}
+
+body.dark {
+    --primary: #660E69;
+    --secondary: #330A4B;
+    --bg: #120016;
+    --card: #1C0627;
+    --text: #F4D9F5;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.container {
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.task-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.task-card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.status {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    color: white;
+}
+
+.pending { background:#f5a3b8;}
+.progress { background:#c084fc;}
+.done { background:#34d399;}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 16px;
+}
