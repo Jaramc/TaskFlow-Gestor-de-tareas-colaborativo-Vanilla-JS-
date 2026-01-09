@@ -114,9 +114,65 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Calendar #07 Section -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="calendar-07-container">
+                        <h2 class="calendar-main-title">Calendar #07</h2>
+                        
+                        <div class="calendar-layout">
+                            <!-- Background Control Panel -->
+                            <div class="background-controls" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                                <select id="backgroundSelector" class="form-select form-select-sm" style="width: auto; font-size: 12px;">
+                                    <option value="Calendarfondo.jpg">Van Gogh Starry Night</option>
+                                    <option value="CalendarfondoSunset.jpg">Sunset</option>
+                                    <option value="CalendarfondoOcean.jpg">Ocean</option>
+                                    <option value="CalendarfondoCustom.jpg">Custom</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Left Panel - Featured Date with Changeable Background -->
+                            <div class="featured-panel">
+                                <button class="today-button">TODAY</button>
+                                <div class="date-display">
+                                    <div class="month-year" id="monthYearDisplay">JANUARY - 2026</div>
+                                    <div class="large-day" id="largeDayDisplay">13</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Panel - Calendar Grid -->
+                            <div class="calendar-panel">
+                                <div class="calendar-navigation">
+                                    <button id="prevMonth" class="nav-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button id="nextMonth" class="nav-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="calendar-content">
+                                    <div class="weekdays">
+                                        <div class="weekday">Sun</div>
+                                        <div class="weekday">Mon</div>
+                                        <div class="weekday">Tue</div>
+                                        <div class="weekday">Wed</div>
+                                        <div class="weekday">Thu</div>
+                                        <div class="weekday">Fri</div>
+                                        <div class="weekday">Sat</div>
+                                    </div>
+                                    <div class="calendar-days" id="calendarDays"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         </div>
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>
