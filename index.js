@@ -1,11 +1,8 @@
-// Function to change calendar background
 function changeCalendarBackground(imageName) {
     const featuredPanel = document.querySelector('.featured-panel');
     if (featuredPanel) {
-        // Remove existing background classes
         featuredPanel.classList.remove('starry-night', 'sunset', 'ocean');
         
-        // Update background image
         const imageUrl = `Imagenes/${imageName}`;
         featuredPanel.style.backgroundImage = `
             linear-gradient(to bottom, 
@@ -15,14 +12,11 @@ function changeCalendarBackground(imageName) {
     }
 }
 
-// Function to set predefined themes
 function setCalendarTheme(theme) {
     const featuredPanel = document.querySelector('.featured-panel');
     if (featuredPanel) {
-        // Remove all theme classes
         featuredPanel.classList.remove('starry-night', 'sunset', 'ocean');
         
-        // Add the selected theme class
         if (theme && theme !== 'default') {
             featuredPanel.classList.add(theme);
         }
@@ -102,7 +96,6 @@ function initializeTaskFlow() {
         logoutButton.addEventListener("click", logOut);
     }
     
-    // Background selector event listener
     const backgroundSelector = document.getElementById("backgroundSelector");
     if (backgroundSelector) {
         backgroundSelector.addEventListener("change", function() {
@@ -150,7 +143,6 @@ function initializeCalendar() {
         if (calendarDaysElement) {
             calendarDaysElement.innerHTML = "";
             
-            // Generate 6 weeks (42 days)
             for (let i = 0; i < 42; i++) {
                 const currentDate = new Date(startDate);
                 currentDate.setDate(startDate.getDate() + i);
@@ -159,38 +151,30 @@ function initializeCalendar() {
                 dayElement.className = "calendar-day";
                 dayElement.textContent = currentDate.getDate();
                 
-                // Add classes for styling
                 if (currentDate.getMonth() !== month) {
                     dayElement.classList.add("other-month");
                 }
                 
-                // Today highlighting (day 13 with dark blue)
                 if (currentDate.toDateString() === today.toDateString()) {
                     dayElement.classList.add("today");
                 }
                 
-                // Special day highlighting (day 8 with pink) - matching the image
                 if (currentDate.getDate() === 8 && currentDate.getMonth() === month) {
                     dayElement.classList.add("special");
                 }
                 
-                // Selected date highlighting
                 if (currentDate.toDateString() === selectedDate.toDateString()) {
                     if (!dayElement.classList.contains("today") && !dayElement.classList.contains("special")) {
                         dayElement.classList.add("selected");
                     }
                 }
                 
-                // Click event listener
                 dayElement.addEventListener("click", function() {
-                    // Only select if it's in the current month
                     if (currentDate.getMonth() === month) {
-                        // Remove previous selections (but keep today and special)
                         document.querySelectorAll(".calendar-day.selected").forEach(el => {
                             el.classList.remove("selected");
                         });
                         
-                        // Add selection only if it's not today or special day
                         if (!dayElement.classList.contains("today") && !dayElement.classList.contains("special")) {
                             dayElement.classList.add("selected");
                         }
@@ -204,11 +188,9 @@ function initializeCalendar() {
             }
         }
         
-        // Update the featured display to show the current selected date
         updateFeaturedDisplay(selectedDate);
     }
     
-    // Event listeners for navigation
     const prevButton = document.getElementById("prevMonth");
     const nextButton = document.getElementById("nextMonth");
     const todayButton = document.querySelector(".today-button");
@@ -245,8 +227,63 @@ function initializeCalendar() {
         });
     }
     
-    // Initialize the calendar
     generateCalendar(currentMonth, currentYear);
 }
 
-document.addEventListener('DOMContentLoaded', initializeTaskFlow);
+let timeLeft = 10;
+let timerId = null;
+const timerDisplay = document.getElementById('timer');
+const startBtn = document.getElementById('startBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+    const secs = (seconds % 60).toString().padStart(2, '0');
+    return `${mins}:${secs}`;
+}
+
+function startTimer() {
+    if (timerId) return;
+    startBtn.disabled = true;
+    timerDisplay.classList.remove('completed');
+
+    timerId = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = formatTime(timeLeft);
+
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            timerId = null;
+            timerDisplay.classList.add('completed', 'animate__animated', 'animate__bounce');
+            startBtn.disabled = false;
+        }
+    }, 1000);
+}
+
+function resetTimer() {
+    clearInterval(timerId);
+    timerId = null;
+    timeLeft = 10;
+    timerDisplay.textContent = formatTime(timeLeft);
+    timerDisplay.classList.remove('completed', 'animate__animated', 'animate__bounce');
+    startBtn.disabled = false;
+}
+
+function initializeTimer() {
+    if (timerDisplay) {
+        timerDisplay.textContent = formatTime(timeLeft);
+    }
+    
+    if (startBtn) {
+        startBtn.addEventListener('click', startTimer);
+    }
+    
+    if (resetBtn) {
+        resetBtn.addEventListener('click', resetTimer);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTaskFlow();
+    initializeTimer();
+});

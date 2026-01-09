@@ -351,6 +351,41 @@ header h1 {
     background: #0056b3;
 }
 
+.timer-display {
+    margin: 2rem 0;
+}
+
+.timer-text {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #333;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+}
+
+.timer-text.completed {
+    color: #f57ee7;
+    animation: pulse 1s ease-in-out;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar {
         position: relative;
@@ -409,5 +444,18 @@ header h1 {
     
     .calendar-07-container {
         padding: 1rem;
+    }
+    
+    .timer-text {
+        font-size: 2.5rem;
+    }
+    
+    .timer-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timer-controls .btn {
+        width: 150px;
     }
 }
