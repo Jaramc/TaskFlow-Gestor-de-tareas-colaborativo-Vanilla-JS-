@@ -20,7 +20,6 @@ formulario.addEventListener('submit', function(event) {
         errorDesc.style.display = 'block';
         }
     } else {
-        // Todo está bien, podemos guardar
         mensajeError.style.display = 'none';
         console.log("Datos válidos, listos para guardar en LocalStorage");
 
@@ -29,7 +28,6 @@ formulario.addEventListener('submit', function(event) {
         errorTitle.style.display = 'none';
         errorDesc.style.display = 'none';
 
-        // 2. Lógica de LocalStorage
         let tareasExistentes = JSON.parse(localStorage.getItem('misTareas')) || [];
         
         const nuevaTarea = {
