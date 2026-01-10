@@ -31,25 +31,26 @@ function rendertasks(filter = "All") {
     filtered.forEach(task  => {
         const item = document.createElement("div");
         item.className = "list-group-item d-flex justify-content-between align-items-center"
+        item.style="z-index: 2;"
         
         item.innerHTML = `
-        <div>
+        <div class="w-100">
             <h4 class="mb-2">${task.title}</h4>
-            <h6 class="mb-3 fw-400">${task.desc}</h6>
-            <span class="status-pill Pending">${task.status}</span>
-            <span class="mb-2 badge bg-${task.priority === "High" ? "danger" : task.priority === "Medium" ? "warning" : "success"}">
-            ${task.priority}
-            </span>
+            <h6 class="mb-3 text-break me-3 fw-400">${task.desc}</h6>
+            <span class="badge status-pill ${task.status.replace(" ", "-")}">${task.status}</span>
+            <span class="mb-2 badge priority-pill ${task.priority}">${task.priority}</span>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-3 me-2">
             <div class="dropdown">
                 <button 
                     class="btn btn-sm btn-outline-primary dropdown-toggle change-status"
                     type="button"
+                    data-bs-display="static"
                     data-bs-toggle="dropdown">
+                    
                     Change Status
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu status-menu">
                     <li><button class="dropdown-item" data-status="Pending">Pending</button></li>
                     <li><button class="dropdown-item" data-status="In Process">In Process</button></li>
                     <li><button class="dropdown-item" data-status="Complete">Complete</button></li>

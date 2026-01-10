@@ -30,8 +30,8 @@
                         <h2>Hi, User</h2>
                         <p>Welcome To Us App!</p>
                     </div>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal">
-                        + Add Task
+                    <button class="btn add-task-btn" data-bs-toggle="modal" data-bs-target="#taskModal">
+                        Add Task
                     </button>
                 </header>
                 <!--filters-->
@@ -42,7 +42,7 @@
                     <button class="btn btn-outline-secondary filter-btn" data-filter="Complete">Complete</button>
                 </div>
                 <!--counter-->
-                <p class="text-muted mt-3 mb-3" id="task-counter">Task Counter: 0</p>
+                <p class="text-muted mt-3 mb-3 task-counter" id="task-counter">Showing: 0</p>
                 <!--Task List-->
                 <div class="list-group" id="task-list"></div>
             </main>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" id="title" class="form-control mb-3" placeholder="Task Title" required>
-                    <input type="text" id="description" class="form-control mb-3" placeholder="Task Description" required>
+                    <input type="text" id="description" class="form-control mb-3" placeholder="Task Description" maxlength="120" required>
                     <select class="form-select" id="priority">
                         <option>Low</option>
                         <option>Medium</option>
