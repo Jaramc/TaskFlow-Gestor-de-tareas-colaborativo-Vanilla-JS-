@@ -230,7 +230,7 @@ function initializeCalendar() {
     generateCalendar(currentMonth, currentYear);
 }
 
-let timeLeft = 10;
+let timeLeft = 0;
 let timerId = null;
 const timerDisplay = document.getElementById('timer');
 const startBtn = document.getElementById('startBtn');
@@ -248,7 +248,7 @@ function startTimer() {
     timerDisplay.classList.remove('completed');
 
     timerId = setInterval(() => {
-        timeLeft--;
+        timeLeft++;
         timerDisplay.textContent = formatTime(timeLeft);
 
         if (timeLeft <= 0) {
@@ -263,7 +263,7 @@ function startTimer() {
 function resetTimer() {
     clearInterval(timerId);
     timerId = null;
-    timeLeft = 10;
+    timeLeft = 0;
     timerDisplay.textContent = formatTime(timeLeft);
     timerDisplay.classList.remove('completed', 'animate__animated', 'animate__bounce');
     startBtn.disabled = false;
