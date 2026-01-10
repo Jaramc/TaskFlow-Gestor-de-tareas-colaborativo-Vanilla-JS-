@@ -48,7 +48,7 @@ function verifySession() {
     
     if (!activeSession || activeSession !== "true") {
         alert("You must log in to access the dashboard");
-        window.location.href = "auth/login.html";
+        window.location.href = "Ximena/login.html";
         return false;
     }
     
@@ -76,7 +76,7 @@ function logOut() {
         localStorage.removeItem("taskflow_sesion_activa");
         localStorage.removeItem("taskflow_usuario_actual");
         
-        window.location.href = "auth/login.html";
+        window.location.href = "Ximena/login.html";
     }
 }
 
