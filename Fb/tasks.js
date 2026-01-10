@@ -1,3 +1,12 @@
+// Función para cerrar sesión
+function logOut() {
+    if (confirm("Are you sure you want to log out?")) {
+        localStorage.removeItem("taskflow_sesion_activa");
+        localStorage.removeItem("taskflow_usuario_actual");
+        window.location.href = "../Ximena/login.html";
+    }
+}
+
 let tasks = [];
 const tasklist = document.getElementById("task-list");
 const taskcounter = document.getElementById("task-counter");
