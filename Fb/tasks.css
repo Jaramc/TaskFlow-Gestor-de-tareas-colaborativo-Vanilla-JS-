@@ -5,6 +5,74 @@
     background-color: rgba(255,255,255,0.2);
     border-radius: 6px;
 }
+
+.logo {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 30px;
+    border: 6px solid rgba(255,255,255,0.3);
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.1) 0%,
+        rgba(255,255,255,0.05) 100%
+    );
+    padding: 16px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white !important;
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    background-color: rgba(255,255,255,0.2);
+    color: white !important;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
 .list-group-item{
     border-radius: 12px;
     margin-bottom: 1rem;
@@ -12,4 +80,128 @@
 }
 .list-group-item:hover{
     transform: translateY(-2px);
+}
+.status-menu.show {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  padding: 0.4rem;
+  min-width: unset;
+}
+.status-menu .dropdown-item {
+  border-radius: 8px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-align: center;
+}
+/*colores items-menu*/
+.status-menu .dropdown-item[data-status="Pending"] {
+  background: rgba(255, 193, 7, 0.15);
+  color: #856404;
+}
+
+.status-menu .dropdown-item[data-status="In Process"] {
+  background: rgba(13, 110, 253, 0.15);
+  color: #084298;
+}
+
+.status-menu .dropdown-item[data-status="Complete"] {
+  background: rgba(25, 135, 84, 0.15);
+  color: #0f5132;
+}
+
+.status-menu .dropdown-item:hover {
+  background-opacity: 1;
+}
+
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.status-pill.Pending{
+    background-color: gray;
+}
+.status-pill.In-Process{
+    background-color: lightblue;
+    color: blue;
+}
+.status-pill.Complete{
+    background-color: green;
+    color: white;
+}
+#task-list {
+    max-width: 90%;
+    margin: 0 auto;
+}
+.priority-pill.Low{
+    background-color: lightgreen;
+    color: green;
+}
+.priority-pill.Medium{
+    background-color: rgb(247, 247, 184);
+    color: darkorange;
+}
+.priority-pill.High{
+    background-color: rgb(249, 193, 193);
+    color: rgb(245, 96, 96);
+}
+.dropdown-menu{
+    z-index: 1050;
+}
+/*btn css*/
+.add-task-btn {
+  background: linear-gradient(135deg, #6f42c1, #845ef7);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 16px rgba(111, 66, 193, 0.25);
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.add-task-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(111, 66, 193, 0.35);
+  color: #fff;
+}
+
+/* Active (click) */
+.add-task-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.25);
+}
+
+/* Focus (accesibilidad) */
+.add-task-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(132, 94, 247, 0.35);
+}
+.add-task-btn::before {
+  content: "+";
+  font-weight: 700;
+  margin-right: 6px;
+}
+/*Task counter css*/
+.task-counter {
+  max-width: 20%;  
+  align-items: center;
+  gap: 0.5rem;
+
+  background: rgba(111, 66, 193, 0.1);
+  color: #6f42c1;
+
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  border: 1px solid rgba(111, 66, 193, 0.2);
 }

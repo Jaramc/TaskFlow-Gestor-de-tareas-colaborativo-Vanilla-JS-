@@ -1,12 +1,3 @@
-// Función para cerrar sesión
-function logOut() {
-    if (confirm("¿Estás seguro que quieres cerrar sesión?")) {
-        localStorage.removeItem("taskflow_sesion_activa");
-        localStorage.removeItem("taskflow_usuario_actual");
-        window.location.href = "../Ximena/login.html";
-    }
-}
-
 const filters = {
     owner: "all",
     priority: null,
