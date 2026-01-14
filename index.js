@@ -230,7 +230,7 @@ function initializeCalendar() {
     generateCalendar(currentMonth, currentYear);
 }
 
-let timeLeft = 10;
+let timeLeft = 0;0
 let timerId = null;
 
 function formatTime(seconds) {
@@ -248,7 +248,7 @@ function startTimer() {
     timerDisplay.classList.remove('completed');
 
     timerId = setInterval(() => {
-        timeLeft--;
+        timeLeft++;
         timerDisplay.textContent = formatTime(timeLeft);
 
         if (timeLeft <= 0) {
@@ -267,7 +267,7 @@ function resetTimer() {
     
     clearInterval(timerId);
     timerId = null;
-    timeLeft = 10;
+    timeLeft = 0;
     timerDisplay.textContent = formatTime(timeLeft);
     timerDisplay.classList.remove('completed');
     startBtn.disabled = false;
